@@ -96,8 +96,8 @@ class mycard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
-      height: 400,
+      width: 350,
+      height: 350,
       child: Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -111,7 +111,7 @@ class mycard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 17,
                   ),
                 ),
               ),
@@ -127,7 +127,7 @@ class mycard extends StatelessWidget {
                     color: Colors.black,
                     backgroundColor: Color(0xFF94d2bd),
                     fontWeight: FontWeight.bold,
-                    fontSize: 17,
+                    fontSize: 15,
                   ),
                 ),
               ),
