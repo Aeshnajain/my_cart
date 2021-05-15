@@ -41,14 +41,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Color(0xFF0A1172),
+          backgroundColor: Color(0xFF94d2bd),
           body: ListView(children: [
-            ElevatedButton(
-              onPressed: ()async {
-                 await getdata();
-                setState(() {});
-              },
-              child: Text("GET_RESULTS"),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Color(0xFF006d77)),
+                onPressed: ()async {
+                   await getdata();
+                  setState(() {});
+                },
+                child: Text("GET_RESULTS",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
+              ),
             ),
             Column(
               children: mylist,
@@ -71,8 +75,14 @@ class mytile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: mycard(txt1, url1, price1)),
-        Expanded(child: mycard(txt2, url2, price2)),
+        Expanded(child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: mycard(txt1, url1, price1),
+        )),
+        Expanded(child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: mycard(txt2, url2, price2),
+        )),
       ],
     );
   }
@@ -86,20 +96,22 @@ class mycard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 400,
       child: Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   txt,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -112,22 +124,23 @@ class mycard extends StatelessWidget {
                 child: Text(
                   " PRICE: \$$price ",
                   style: TextStyle(
-                    color: Colors.white,
-                    backgroundColor: Color(0xFF0A1172),
+                    color: Colors.black,
+                    backgroundColor: Color(0xFF94d2bd),
                     fontWeight: FontWeight.bold,
+                    fontSize: 17,
                   ),
                 ),
               ),
             ),
             Expanded(
-              flex:8,
+              flex:6,
                 child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Image.network(url),
             )),
           ],
         ),
-        color: Color(0xFF63C5DA),
+        color: Color(0xFF006d77),
       ),
     );
   }
